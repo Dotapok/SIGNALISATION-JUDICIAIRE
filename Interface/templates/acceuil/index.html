@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<form method="POST"
+      style="text-align : center;
+      padding : 100px;
+      margin : 50px;
+      background-color: rgb(22, 25, 29);
+      border-radius:18px;
+      border:none;">
+    <img src="{% static 'Interface/images/utilisateur.png' %}" align="middle">
+    <br>
+    <label style="font-size : 30px;
+    font-style: bold;
+    text-align: center;">Connexion</label>
+    <br>
+    <br>
+    <br>
+    <input type="text"
+           placeholder="Username "
+           style="width:300px;
+           background-color: rgb(255, 255, 255);
+           color: rgb(0, 0, 0);
+           font-size : 30px;
+           border-radius : 18px;
+           text-align: center;">
+    <br>
+    <br>
+    <br>
+    <input type="password"
+           placeholder="Mot de passe"
+           style="width:300px;
+           background-color: rgb(255, 255, 255);
+           color: rgb(0, 0, 0);
+           font-size : 30px;
+           border-radius : 18px;
+           text-align: center;">
+    <br>
+    <br>
+    <br>
+    <input type="submit"
+           value="Se connecter"
+           style="text-align:center;
+           padding:5px 5px;
+           font-size: 18px;
+           font-style: bold;
+           background-color: rgb(143, 143, 143);
+           color:white;">
+</form>
+{% endblock %}
