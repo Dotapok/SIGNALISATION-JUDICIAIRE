@@ -1,8 +1,11 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request,'acceuil/index.html')
+    template=loader.get_template("interface/index.html")
+    context={}
+    return HttpResponse(template.render(context,request))
 
 #inteface de l'utilisateur
 def connexion(request):
