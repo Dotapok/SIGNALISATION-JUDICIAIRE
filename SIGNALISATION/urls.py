@@ -23,5 +23,4 @@ urlpatterns = [
     path('',index,name='index'),
     path('acceuil/',connexion,name='acceuil'),
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+]
