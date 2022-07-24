@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Interface.views import index,connexion
+from Interface.views import Interface
+from Connexion.views import index
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('',index,name='index'),
-    path('acceuil/',connexion,name='acceuil'),
+    path('acceuil/',Interface,name='acceuil'),
     path('admin/', admin.site.urls),
 ]

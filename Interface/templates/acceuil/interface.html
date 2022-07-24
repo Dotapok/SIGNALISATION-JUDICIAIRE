@@ -1,6 +1,311 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <div class="tab">
+    <button class="tablinks" onclick="openM(event, 'acceuil')" id="defaultOpen">Acceuil</button>
+    <button class="tablinks" onclick="openM(event, 'renseigne')">Renseignements</button>
+    <button class="tablinks" onclick="openM(event, 'crime')">Infractions</button>
+    <button class="tablinks" onclick="openM(event, 'avis')">Avis de recherche</button>
+    <button class="tablinks" onclick="openM(event, 'stats')">Statistiques</button>
+    <button class="tablinks" onclick="openM(event, 'about')">A propos</button>
+  </div>
+
+  <!--Contenu de la page d'acceuil-->
+  <div id="acceuil" class="tabcontent" style="text-align:center;">
+    <br>
+    <h1>Acceuil</h1>
+    <p>Bienvenue sur la plateforme </p>
+  </div>
+
+  <!--Contenu de la page renseignement-->
+  <div id="renseigne" class="tabcontent" style="text-align:center;">
+    <br>
+    <h1>Renseignements concernant l'enquete :</h1>
+    <br>
+    <!--formulaire multipage-->
+    <main>
+      <div class="stepper">
+        <div class="step--1 step-active">Suspect</div>
+        <div class="step--2">Victime</div>
+        <div class="step--3">Antecedents judiciaire</div>
+        <div class="step--4">Creation de la procedure</div>
+      </div>
+      <form class="form form-active">
+        <div class="form--header-container">
+          <h1 class="form--header-title">
+            Ajoutez les informations concernant la victime :
+          </h1>
+
+          <p class="form--header-text">
+            Tell us more about you.
+          </p>
+        </div>
+        <input type="text" placeholder="Nom de la victime" />
+        <input type="text" placeholder="Prenom de la victime" />
+        <input type="text" placeholder="Profession" />
+        <input type="text" placeholder="Domicile" />
+        <input type="text" placeholder="Situation matrimoniale" />
+        <input type="text" placeholder="Prejudice" />
+        <button class="form__btn" id="btn-1">Next</button>
+      </form>
+      <form class="form">
+        <div class="form--header-container">
+          <h1 class="form--header-title">
+            Company Info
+          </h1>
+
+          <p class="form--header-text">
+            Tell us more about your company.
+          </p>
+        </div>
+
+        <input type="text" placeholder="Company Name" />
+        <input type="text" placeholder="Job title" />
+        <input type="text" placeholder="Location" />
+        <button class="form__btn" id="btn-2-prev">Previous</button>
+        <button class="form__btn" id="btn-2-next">Next</button>
+      </form>
+      <form class="form">
+        <div class="form--header-container">
+          <h1 class="form--header-title">
+            Social account
+          </h1>
+
+          <p class="form--header-text">
+            Tell us more about your social account.
+          </p>
+        </div>
+        <input type="text" placeholder="Linkedin" />
+        <input type="text" placeholder="Twitter" />
+        <input type="text" placeholder="Github" />
+        <button class="form__btn" id="btn-3">Submit</button>
+      </form>
+      <div class="form--message"></div>
+    </main>
+  </div>
+  
+
+  <!--Contenu de la page infraction-->
+  <div id="crime" class="tabcontent" style="text-align:center;">
+    <br>
+    <h1>Infractions</h1>
+    <br>
+    <p>Ajouter les informations concernant une infraction</p>
+    <main>
+  <div class="stepper">
+    <div class="step--1 step-active">Victime</div>
+    <div class="step--2">Auteur</div>
+    <div class="step--3">Informations supplementaires</div>
+  </div>
+  <form class="form form-active">
+    <div class="form--header-container">
+      <h1 class="form--header-title">
+        Qui est la victime ?
+      </h1>
+    </div>
+    <input type="text" placeholder="Nom de la victime" />
+        <input type="text" placeholder="Prenom de la victime" />
+        <input type="text" placeholder="Profession" />
+        <input type="text" placeholder="Domicile" />
+        <input type="text" placeholder="Situation matrimoniale" />
+        <input type="text" placeholder="Prejudice" />
+    <button class="form__btn" id="btn-1">Next</button>
+  </form>
+  <form class="form">
+    <div class="form--header-container">
+      <h1 class="form--header-title">
+        Company Info
+      </h1>
+    </div>
+
+    <input type="text" placeholder="Company Name" />
+    <input type="text" placeholder="Job title" />
+    <input type="text" placeholder="Location" />
+    <button class="form__btn" id="btn-2-prev">Previous</button>
+    <button class="form__btn" id="btn-2-next">Next</button>
+  </form>
+  <form class="form">
+    <div class="form--header-container">
+      <h1 class="form--header-title">
+        Social account
+      </h1>
+
+      <p class="form--header-text">
+        Tell us more about your social account.
+      </p>
+    </div>
+    <input type="text" placeholder="Linkedin" />
+    <input type="text" placeholder="Twitter" />
+    <input type="text" placeholder="Github" />
+    <button class="form__btn" id="btn-3">Submit</button>
+  </form>
+  <div class="form--message"></div>
+</main>
+  </div>
+
+  <!--Contenu de la page avis-->
+  <div id="avis" class="tabcontent" style="text-align:center;">
+    <br>
+    <h1>Avis de recherche</h1>
+    <p>Information par rapport a la personne recherchée</p>
+    <main>
+  <div class="stepper">
+    <div class="step--1 step-active">Step 1</div>
+    <div class="step--2">Step 2</div>
+    <div class="step--3">Step 3</div>
+    <div class="step--4">Finish</div>
+  </div>
+  <form class="form form-active">
+    <div class="form--header-container">
+      <h1 class="form--header-title">
+        Personal Info
+      </h1>
+
+      <p class="form--header-text">
+        Tell us more about you.
+      </p>
+    </div>
+    <input type="text" placeholder="Name" />
+    <input type="text" placeholder="Email" />
+    <input type="text" placeholder="Password" />
+    <button class="form__btn" id="btn-1">Next</button>
+  </form>
+  <form class="form">
+    <div class="form--header-container">
+      <h1 class="form--header-title">
+        Company Info
+      </h1>
+
+      <p class="form--header-text">
+        Tell us more about your company.
+      </p>
+    </div>
+
+    <input type="text" placeholder="Company Name" />
+    <input type="text" placeholder="Job title" />
+    <input type="text" placeholder="Location" />
+    <button class="form__btn" id="btn-2-prev">Previous</button>
+    <button class="form__btn" id="btn-2-next">Next</button>
+  </form>
+  <form class="form">
+    <div class="form--header-container">
+      <h1 class="form--header-title">
+        Social account
+      </h1>
+
+      <p class="form--header-text">
+        Tell us more about your social account.
+      </p>
+    </div>
+    <input type="text" placeholder="Linkedin" />
+    <input type="text" placeholder="Twitter" />
+    <input type="text" placeholder="Github" />
+    <button class="form__btn" id="btn-3">Submit</button>
+  </form>
+  <div class="form--message"></div>
+</main>
+  </div>
+
+  <!--Contenu de la page statistiques-->
+  <div id="stats" class="tabcontent" style="text-align:center;">
+    <br>
+    <h3>Statistiques</h3>
+    <p>Statistiques de recherches</p> 
+    <ul>
+      <li>Statistiques sur les personnes recherchées</li>
+      <li>Statistiques sur les objets recherchés</li>
+    </ul>
+  </div>
+
+  <!--Contenu de la page a propos-->
+  <div id="about" class="tabcontent" style="text-align:center;">
+    <h3>A propos</h3>
+    <p>Nous concernant,nous sommes une entreprise qui s'occupe du domaine cybersecurité des systeme d'information</p>
+  </div>
+
+<!--Script Js pour migrer entre les modules du site-->
+<script>
+//fonction de formulaire a plusieurs pages
+
+
+
+
+//fonction de changement de menu
+function openM(evt, fenetre) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(fenetre).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+//formulaire multipage
+const formBtn1 = document.querySelector("#btn-1")
+const formBtnPrev2 = document.querySelector("#btn-2-prev")
+const formBtnNext2 = document.querySelector("#btn-2-next")
+const formBtn3 = document.querySelector("#btn-3")
+
+//les fonctions
+formBtn1.addEventListener("click", function(e) {
+  gotoNextForm(formBtn1, formBtnNext2, 1, 2)
+  e.preventDefault()
+})
+
+// Next button listener of form 2
+formBtnNext2.addEventListener("click", function(e) {
+  gotoNextForm(formBtnNext2, formBtn3, 2, 3)
+  e.preventDefault()
+})
+
+// Previous button listener of form 2
+formBtnPrev2.addEventListener("click", function(e) {
+  gotoNextForm(formBtnNext2, formBtn1, 2, 1)
+  e.preventDefault()
+})
+
+// Button listener of form 3
+formBtn3.addEventListener("click", function(e) {
+  document.querySelector(`.step--3`).classList.remove("step-active")
+  document.querySelector(`.step--4`).classList.add("step-active")
+  formBtn3.parentElement.style.display = "none"
+  document.querySelector(".form--message").innerHTML = `
+   <h1 class="form--message-text">Your account is successfully created </h1>
+   `
+  e.preventDefault()
+})
+
+const gotoNextForm = (prev, next, stepPrev, stepNext) => {
+  // Get form through the button
+  const prevForm = prev.parentElement
+  const nextForm = next.parentElement
+  const nextStep = document.querySelector(`.step--${stepNext}`)
+  const prevStep = document.querySelector(`.step--${stepPrev}`)
+  // Add active/inactive classes to both previous and next form
+  nextForm.classList.add("form-active")
+  nextForm.classList.add("form-active-animate")
+  prevForm.classList.add("form-inactive")
+  // Change the active step element
+  prevStep.classList.remove("step-active")
+  nextStep.classList.add("step-active")
+  // Remove active/inactive classes to both previous an next form
+  setTimeout(() => {
+    prevForm.classList.remove("form-active")
+    prevForm.classList.remove("form-inactive")
+    nextForm.classList.remove("form-active-animate")
+  }, 1000)
+}
+
+</script>
+
 <style>
 * {box-sizing: border-box}
 
@@ -47,207 +352,172 @@
   height: 100%;
 }
 
-#regForm {
-  background-color: #ffffff;
-  margin: 100px auto;
-  font-family: Raleway;
-  padding: 40px;
-  width: 85%;
-  min-width: 300px;
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background:  rgb(22, 25, 29);
+  font-family: "Nunito", sans-serif;
 }
 
-/* apercu du bouton au froler */
-button:hover {
-  opacity: 0.8;
-}
-
-/*style des espace de saisie*/
-input {
-  padding: 10px;
+main {
+  height: 100vh;
   width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
-/*style lorque un champs est invalide*/
-input.invalid {
-  background-color: #ffdddd;
+.stepper {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5%;
 }
 
+.step--1,
+.step--2,
+.step--3,
+.step--4 {
+  width: 300px;
+  padding: 0.5rem 0;
+  background: #000;
+  color: #666;
+  text-align: center;
+}
+.step--1,
+.step--2,
+.step--3 {
+  border-right: 1px solid #666;
+}
 
+.form {
+  background: #000;
+  text-align: center;
+  position: absolute;
+  width: 1000px;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+  display: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.form--header-container {
+  background: linear-gradient(to right, rgb(51, 51, 51), #919191);
+  color: #fff;
+  height: 6rem;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.form--header-title {
+  font-size: 1.4rem;
+}
+
+.form--header-text {
+  padding: 0.5rem 0;
+}
+
+input[type="text"] {
+  padding: 0.8rem;
+  margin: auto;
+  margin-top: 0.5rem;
+  width: 20rem;
+  display: block;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid #bdbdbb;
+}
+
+.form__btn {
+  background: #333;
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  width: 7rem;
+  margin: 1rem auto;
+  border-radius: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+.form--message-text {
+  width: 25rem;
+  background: #000;
+  color: #444;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+  animation: fadeIn 0.8s;
+  border-radius: 1rem;
+}
+
+.form-active {
+  z-index: 1000;
+  display: block;
+}
+.form-active-animate {
+  animation: moveRight 1s;
+}
+.form-inactive {
+  display: block;
+  animation: moveLeft 1s;
+}
+
+.step-active {
+  background: #666;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-27rem) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0rem) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0rem) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(27rem) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#lettre
+{
+  width:800px;
+  text-align:center;
+  font-style:bold;
+  font-size:14px;
+}
 
 </style>
-
-  <div class="tab">
-    <button class="tablinks" onclick="openM(event, 'acceuil')" id="defaultOpen">Acceuil</button>
-    <button class="tablinks" onclick="openM(event, 'renseigne')">Renseignements</button>
-    <button class="tablinks" onclick="openM(event, 'crime')">Infractions</button>
-    <button class="tablinks" onclick="openM(event, 'avis')">Avis de recherche</button>
-    <button class="tablinks" onclick="openM(event, 'stats')">Statistiques</button>
-    <button class="tablinks" onclick="openM(event, 'about')">A propos</button>
-  </div>
-
-  <!--Contenu de la page d'acceuil-->
-  <div id="acceuil" class="tabcontent" style="text-align:center;">
-    <h1>Acceuil</h1>
-    <p>Bienvenue sur la plateforme </p>
-  </div>
-
-  <!--Contenu de la page renseignement-->
-  <div id="renseigne" class="tabcontent" style="text-align:center;">
-    <h1>Renseignements concernant l'enquete :</h1>
-    <form id="regForm" action="">
-    <!-- CREATION DES DIFFERENTES TABLES DANS LE FORMULAIRE-->
-    <div class="tab">Concernant le suspect :
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-    </div>
-    <div class="tab">Concernant la victime :
-      <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-      <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-      <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-    </div>
-    <div class="tab">Antecedents Judiciaires du suspect :
-      <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-      <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-      <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-    </div>
-    <div style="overflow:auto;">
-      <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Precedent</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)">Suivant</button>
-      </div>
-    </div>
-    <!-- Circles which indicates the steps of the form: -->
-    <div style="text-align:center;margin-top:40px;">
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-    </div>
-  </form>
-  </div>
-
-  <!--Contenu de la page infraction-->
-  <div id="crime" class="tabcontent" style="text-align:center;">
-    <h1>Infractions</h1>
-    <p>Ajouter les informations concernant l'infraction</p>
-    <form id="regForm" action="">
-    <!-- CREATION DES DIFFERENTES TABLES DANS LE FORMULAIRE-->
-    <div class="tab">Concernant le suspect :
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-    </div>
-    <div class="tab">Concernant la victime :
-      <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-      <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-      <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-    </div>
-    <div class="tab">Antecedents Judiciaires du suspect :
-      <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-      <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-      <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-    </div>
-    <div style="overflow:auto;">
-      <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Precedent</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)">Suivant</button>
-      </div>
-    </div>
-    <!-- Circles which indicates the steps of the form: -->
-    <div style="text-align:center;margin-top:40px;">
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-    </div>
-  </form>
-  </div>
-
-  <!--Contenu de la page avis-->
-  <div id="avis" class="tabcontent" style="text-align:center;">
-    <h1>Avis de recherche</h1>
-    <p>Information par rapport a la personne recherchée</p>
-    <form id="regForm" action="">
-    <!-- CREATION DES DIFFERENTES TABLES DANS LE FORMULAIRE-->
-    <div class="tab">Concernant le suspect :
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-      <p><input placeholder="Nom" oninput="this.className = ''" name="N"></p>
-      <p><input placeholder="Prenom" oninput="this.className = ''" name="Pre"></p>
-    </div>
-    <div class="tab">Concernant la victime :
-      <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-      <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-      <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-    </div>
-    <div class="tab">Antecedents Judiciaires du suspect :
-      <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-      <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-      <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-    </div>
-    <div style="overflow:auto;">
-      <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Precedent</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)">Suivant</button>
-      </div>
-    </div>
-    <!-- Circles which indicates the steps of the form: -->
-    <div style="text-align:center;margin-top:40px;">
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-    </div>
-  </form>
-  </div>
-
-  <!--Contenu de la page statistiques-->
-  <div id="stats" class="tabcontent" style="text-align:center;">
-    <h3>Statistiques</h3>
-    <p>Statistiques de recherches</p> 
-    <ul>
-      <li>Statistiques sur les personnes recherchées</li>
-      <li>Statistiques sur les objets recherchés</li>
-    </ul>
-  </div>
-
-  <!--Contenu de la page a propos-->
-  <div id="about" class="tabcontent" style="text-align:center;">
-    <h3>A propos</h3>
-    <p>Nous concernant,nous sommes une entreprise qui s'occupe du domaine cybersecurité des systeme d'information</p>
-  </div>
-
-<!--Script Js pour migrer entre les modules du site-->
-<script>
-function openM(evt, fenetre) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(fenetre).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
 
 {% endblock %}
 
